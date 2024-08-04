@@ -9,6 +9,8 @@ class FruitHub extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SplashView();
+    return const MaterialApp(
+      home: SplashView(),
+    );
   }
 }
