@@ -7,14 +7,7 @@ class OnBoardingPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView(
       children: const [
-        Text(
-          'data',
-          style: TextStyle(color: Colors.black),
-        ),
-        Text(
-          'data',
-          style: TextStyle(color: Colors.black),
-        )
+       
       ],
     );
   }
