@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/core/routes.dart';
+import 'package:fruits_hub/core/utils/app_images.dart';
 import 'package:svg_flutter/svg.dart';
 
-import '../../../../../core/utils/app_images.dart';
+
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
