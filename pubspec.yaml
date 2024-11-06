@@ -28,10 +28,18 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
-  svg_flutter: ^0.0.1
+  flutter_svg: ^2.0.11
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
+
+
+  
+    
 
 dev_dependencies:
   flutter_launcher_icons: "^0.13.1"
@@ -49,6 +57,7 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
 flutter:
+  generate: true
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
@@ -57,7 +66,6 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/photos/
-    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
@@ -92,5 +100,12 @@ flutter_assets:
   assets_path: assets/photos/
   output_path: lib/core/utils/
   filename: app_images.dart
-  field_prefix: 
+  field_prefix: null
   class_name: AppImages
+flutter_intl:
+  enabled: true
+  class_name: S
+  arb-dir: lib/l10n
+  template-arb-file: app_en.arb
+  output-localization-file: app_localizations.dart
+
