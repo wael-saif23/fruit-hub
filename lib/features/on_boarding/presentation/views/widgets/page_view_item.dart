@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruits_hub/core/utils/app_colors.dart';
+import 'package:fruits_hub/core/utils/app_text_styles.dart';
 
 class PageViewItem extends StatelessWidget {
   const PageViewItem({
@@ -7,7 +9,7 @@ class PageViewItem extends StatelessWidget {
     required this.image,
     required this.subtitle,
     required this.title,
-    required this.backgroundImage, 
+    required this.backgroundImage,
     required this.isVisible,
   });
 
@@ -42,11 +44,11 @@ class PageViewItem extends StatelessWidget {
                 right: 16,
                 child: Visibility(
                   visible: isVisible,
-                  
-                  child: const Text(
+                  child: Text(
                     "تخط",
-                    style: TextStyle(
+                    style: AppTextStyles.regular13.copyWith(
                       decoration: TextDecoration.underline,
+                      color: AppColors.kLightGray,
                     ),
                   ),
                 ),
@@ -65,6 +67,7 @@ class PageViewItem extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 37),
           child: Text(
             subtitle,
+            style: AppTextStyles.semiBold13.copyWith(color: AppColors.kGray),
             textAlign: TextAlign.center,
           ),
         ),

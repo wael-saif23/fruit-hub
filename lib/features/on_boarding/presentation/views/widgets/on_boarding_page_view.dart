@@ -1,5 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_images.dart';
+import 'package:fruits_hub/core/utils/app_text_styles.dart';
 import 'package:fruits_hub/features/on_boarding/presentation/views/widgets/page_view_item.dart';
 
 class OnBoardingPageView extends StatelessWidget {
@@ -9,7 +13,7 @@ class OnBoardingPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView(
       controller: pageController,
-      children: const [
+      children: [
         PageViewItem(
           isVisible: true,
           image: Assets.photosOnBoardingView1ImageFruitBasket,
@@ -21,12 +25,18 @@ class OnBoardingPageView extends StatelessWidget {
             children: [
               Text(
                 "مرحبًا بك في",
+                style: AppTextStyles.bold23
+                    .copyWith(color: AppColors.kblack, shadows: shadows()),
+              ),
+              Text(
+                "  HUB",
+                style: AppTextStyles.bold23.copyWith(
+                    color: AppColors.secondaryColor, shadows: shadows()),
               ),
               Text(
                 "Fruit",
-              ),
-              Text(
-                "HUB",
+                style: AppTextStyles.bold23.copyWith(
+                    color: AppColors.primaryColor, shadows: shadows()),
               ),
             ],
           ),
@@ -37,19 +47,23 @@ class OnBoardingPageView extends StatelessWidget {
           backgroundImage: Assets.photosOnboardingview2BackgroundImage,
           subtitle:
               "نقدم لك أفضل الفواكه المختارة بعناية. اطلع على التفاصيل والصور والتقييمات لتتأكد من اختيار الفاكهة المثالية",
-          title: Text(
-            'ابحث وتسوق',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              color: Color(0xFF0C0D0D),
-              fontSize: 23,
-              fontFamily: 'Cairo',
-              fontWeight: FontWeight.w700,
-              height: 0,
-            ),
-          ),
+          title: Text('ابحث وتسوق',
+              textAlign: TextAlign.center,
+              style: AppTextStyles.bold23.copyWith(
+                color: AppColors.kblack,
+              )),
         ),
       ],
     );
+  }
+
+  List<Shadow>? shadows() {
+    return [
+      const Shadow(
+        color: AppColors.kLightGray,
+        offset: Offset(0, 4),
+        blurRadius: 10.0,
+      ),
+    ];
   }
 }

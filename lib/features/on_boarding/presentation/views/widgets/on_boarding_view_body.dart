@@ -59,6 +59,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                 ? CustomButton(
                     onPressed: () {},
                     text: 'ابدأ الان',
+                  
                   )
                 : const SizedBox(
                     height: 54,
