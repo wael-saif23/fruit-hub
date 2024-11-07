@@ -41,7 +41,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
           pageController: pageController,
         )),
         DotsIndicator(
-          dotsCount: 3,
+          dotsCount: 2,
           decorator: DotsDecorator(
             color: currentIndex == 1
                 ? AppColors.primaryColor
