@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruits_hub/context.dart';
+import 'package:fruits_hub/core/extentions/navegator_extension.dart';
+import 'package:fruits_hub/core/routes.dart';
+import 'package:fruits_hub/core/services/shared_pref_singltone.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/utils/app_text_styles.dart';
 
@@ -44,11 +48,18 @@ class PageViewItem extends StatelessWidget {
                 right: 16,
                 child: Visibility(
                   visible: isVisible,
-                  child: Text(
-                    "تخط",
-                    style: AppTextStyles.regular13.copyWith(
-                      decoration: TextDecoration.underline,
-                      color: AppColors.kLightGray,
+                  child: InkWell(
+                    onTap: () {
+                      SharedPrefsHelper.save(
+                          key: KIsOnbourdingViewSeen, value: true);
+                      context.pushReplacementNamed(AppRoutes.login);
+                    },
+                    child: Text(
+                      "تخط",
+                      style: AppTextStyles.regular13.copyWith(
+                        decoration: TextDecoration.underline,
+                        color: AppColors.kLightGray,
+                      ),
                     ),
                   ),
                 ),

@@ -1,6 +1,9 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/context.dart';
+import 'package:fruits_hub/core/extentions/navegator_extension.dart';
+import 'package:fruits_hub/core/routes.dart';
+import 'package:fruits_hub/core/services/shared_pref_singltone.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
 import 'package:fruits_hub/core/widgets/custom_buttom.dart';
 import 'package:fruits_hub/features/on_boarding/presentation/views/widgets/on_boarding_page_view.dart';
@@ -47,7 +50,6 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                 ? AppColors.primaryColor
                 : AppColors.primaryColor.withOpacity(0.5), // Inactive color
             activeColor: AppColors.primaryColor,
-            
           ),
         ),
         const SizedBox(
@@ -57,9 +59,12 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             padding: const EdgeInsets.symmetric(horizontal: KHorizontalPadding),
             child: currentIndex == 1
                 ? CustomButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      SharedPrefsHelper.save(
+                          key: KIsOnbourdingViewSeen, value: true);
+                      context.pushReplacementNamed(AppRoutes.login);
+                    },
                     text: 'ابدأ الان',
-                  
                   )
                 : const SizedBox(
                     height: 54,
