@@ -39,7 +39,7 @@ class SharedPrefsHelper {
 
   // Method to retrieve data from Shared Preferences
   static dynamic get({required String? key}) {
-    if (_prefs == null || key == null) return null; // Check for initialized _prefs and non-null key
+    if (_prefs == null || key == null) return false; // Check for initialized _prefs and non-null key
     return _prefs!.get(key); // Retrieve the value by key, or null if not found
   }
 
