@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_hub/features/auth/presentation/views/login_view.dart';
+import 'package:fruits_hub/features/auth/presentation/views/singup_view.dart';
 
 import '../features/on_boarding/presentation/views/on_boarding_view.dart';
 import '../features/splash/presentation/views/splash_view.dart';
@@ -8,6 +9,7 @@ class AppRoutes {
   static const String splash = '/';
   static const String onBoarding = '/OnBoardingView';
   static const String login = '/LoginView';
+  static const String signup = '/SignUpView';
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutes.splash:
@@ -21,6 +23,10 @@ class AppRoutes {
       case AppRoutes.login:
         return MaterialPageRoute(
           builder: (context) => const LoginView(),
+        );
+      case AppRoutes.signup:
+        return MaterialPageRoute(
+          builder: (context) => const SignUpView(),
         );
       default:
         return MaterialPageRoute(
