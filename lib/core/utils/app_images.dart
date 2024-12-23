@@ -2,9 +2,21 @@
 class Assets {
   Assets._();
   
+  /// Assets for photosAppleIcon
+  /// assets/photos/apple_icon.svg
+  static const String photosAppleIcon = "assets/photos/apple_icon.svg";
+
   /// Assets for photosCirclesSpashView
   /// assets/photos/Circles-spash-view.svg
   static const String photosCirclesSpashView = "assets/photos/Circles-spash-view.svg";
+
+  /// Assets for photosFacebookIcon
+  /// assets/photos/facebook_icon.svg
+  static const String photosFacebookIcon = "assets/photos/facebook_icon.svg";
+
+  /// Assets for photosGoogleIcon
+  /// assets/photos/google_icon.svg
+  static const String photosGoogleIcon = "assets/photos/google_icon.svg";
 
   /// Assets for photosOnBoardingView1ImageFruitBasket
   /// assets/photos/onBoardingView1_Image_fruitBasket.svg
