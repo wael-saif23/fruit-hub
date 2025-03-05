@@ -1,13 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'package:fruits_hub/core/routes.dart';
 import 'package:fruits_hub/core/services/shared_pref_singltone.dart';
 import 'package:fruits_hub/core/utils/app_colors.dart';
+import 'package:fruits_hub/firebase_options.dart';
 import 'package:fruits_hub/generated/l10n.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // Ensures that Flutter bindings are ready
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  ); // Ensures that Flutter bindings are ready
  await SharedPrefsHelper.init(); // Initialize Shared Preferences once
   runApp(const FruitHub());
 }

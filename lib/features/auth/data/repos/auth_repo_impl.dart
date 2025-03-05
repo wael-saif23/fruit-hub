@@ -9,7 +9,7 @@ import 'package:fruits_hub/features/auth/domain/repos/auth_repo.dart';
 class AuthRepoImpl implements AuthRepo {
   final FirebaseAuthService firebaseAuthService;
 
-  AuthRepoImpl(this.firebaseAuthService);
+  AuthRepoImpl({required this.firebaseAuthService});
   @override
   Future<Either<Failure, UserEntity>> createUserWithEmailAndPassword(
       String email, String password, String name) async {
